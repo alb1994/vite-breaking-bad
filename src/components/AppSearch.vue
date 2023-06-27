@@ -4,8 +4,8 @@ export default {
     data() {
         return {
             store,
-            listaTipi: [
-                , "Bug",
+            listaTipi: [,
+                "Bug",
                 "Dark",
                 "Dragon",
                 "Electric",
@@ -40,10 +40,10 @@ export default {
         <div class="circle  yellow noblock"></div> 
     </div>
     <div>
-        <select v-model="store.type1">
-            <option v-for="(tipo, index) in listaTipi" :key="index" :valute="tipo">{{tipo}}</option>
-            
-        </select>
+        <select v-model="store.type1" @keyup.enter="$emit('filtro')">
+                <option v-for="(tipo, index) in listaTipi" :key="index" :value="tipo">{{ tipo }}</option>
+            </select>
+            <button @click="$emit('filtro')">go</button>
     </div>
     </div>
 </template>
