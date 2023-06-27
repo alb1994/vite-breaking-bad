@@ -16,9 +16,9 @@ export default {
 <template lang="">
     <div class="card">
         <div class="flex flex-wrap">
-            <div class="card-item" v-for="(pokemon, index) in store.pokemonlist" :key="pokemon.id">
-                <Appcard :mypokemon="pokemon" />
-            </div>
+            <div class="card-item" v-for="(pokemon, index) in store.pokemonlist.slice(0, 10)" :key="pokemon.id">
+        <Appcard :mypokemon="pokemon" />
+    </div>
         </div>
     </div>
 </template>
