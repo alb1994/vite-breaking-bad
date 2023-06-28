@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             store,
+            //array tipologia pokemon
             listaTipi: [,
                 "Bug",
                 "Dark",
@@ -40,10 +41,13 @@ export default {
         <div class="circle  yellow noblock"></div> 
     </div>
     <div>
+        <!-- Selezione del tipo di Pokémon -->
         <select v-model="store.type1" @keyup.enter="$emit('filtro')">
-                <option v-for="(tipo, index) in listaTipi" :key="index" :value="tipo">{{ tipo }}</option>
-            </select>
-            <button @click="$emit('filtro')">go</button>
+            <!-- Iterazione sugli elementi della lista dei tipi di Pokémon -->
+            <option v-for="(tipo, index) in listaTipi" :key="index" :value="tipo">{{ tipo }}</option>
+        </select>
+        <!-- Pulsante per avviare la ricerca -->
+        <button @click="$emit('filtro')">go</button>
     </div>
     </div>
 </template>
@@ -70,5 +74,9 @@ export default {
 
 select {
     margin: 20px;
+}
+
+button {
+    margin-right: 10px;
 }
 </style>

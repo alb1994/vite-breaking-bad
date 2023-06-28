@@ -7,7 +7,9 @@ export default {
 </script>
 <template lang="">
     <div>
+        <!-- Immagine del Pokémon -->
         <img :src="mypokemon.imageUrl" :alt="mypokemon.imageUrl" class="img">
+        <!-- Nome del Pokémon -->
         <h4>{{ mypokemon.name }}</h4>
     </div>
 </template>
